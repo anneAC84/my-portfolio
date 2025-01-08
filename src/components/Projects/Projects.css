@@ -1,0 +1,275 @@
+:root {
+  --color-dark-blue: #2b3a67;
+  --color-beige: #f7f1e5;
+}
+
+.projects-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  font-family: 'Chewy', sans-serif;
+  background-color: var(--color-beige);
+  color: var(--color-dark-blue);
+}
+
+ #projects {
+  background-color: var(--color-beige);  /* Light, neutral background */
+  color: var(--color-dark-blue); /* For text */
+}
+
+/* Title Styling */
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-dark-blue);
+  font-family: 'Chewy', sans-serif;
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Project Cards */
+.project-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Modal Styles */
+.project-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Ensure it's behind the button */
+}
+
+/* Fade-out effect for the overlay */
+.project-details-overlay.fade-out {
+  opacity: 0;
+}
+
+/* Modal content */
+.project-details-modal {
+  background: var(--color-dark-blue);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  color: white;
+  text-align: left;
+}
+
+.project-details-modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modal-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  color: white; /* Change to match your modal's theme */
+  transition: transform 0.2s;
+}
+
+.close-btn:hover .close-icon {
+  transform: scale(1.2);
+}
+
+/* Ensure Modal Container is Positioned Correctly */
+.project-details-modal {
+  position: relative; /* Allows absolute positioning for child elements like the close button */
+}
+
+/* Modal Header */
+.modal-header {
+  color: white;
+  padding: 1rem;
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: 'Chewy', sans-serif; /* Bold font for header */
+}
+
+/* Modal Image */
+.modal-project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.5rem; /* Ensure space between image and time frame */
+}
+
+.modal-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem; /* Adjust for spacing between image and description */
+}
+
+
+.modal-description {
+  font-size: 1rem;
+  color: beige;
+  margin-bottom: 1rem;
+  font-family: 'Chewy', sans-serif; /* Ensure Chewy is used */
+}
+
+/* Technologies Section */
+
+
+/* Modal Links Section */
+.modal-links {
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 20px;
+}
+
+.modal-links a {
+  display: inline-block;
+  background: white;
+  color: var(--color-dark-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: background 0.3s;
+}
+
+.modal-links a:hover {
+  background: var(--color-beige);
+}
+/* Close Button */
+
+
+@media (max-width: 768px) {
+  .project-details-modal {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .modal-header {
+    font-size: 1.5rem;
+  }
+
+  .project-details-modal h3 {
+    font-size: 1.6rem;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .tech-icon {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .modal-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .modal-links a {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.project-details-overlay.fade-out {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}  
+
+.modal-time-frame {
+  font-size: 1rem;
+  font-weight: 500;
+  color: beige; /* Adjust to your theme */
+  margin-bottom: 1rem;
+}

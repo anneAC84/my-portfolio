@@ -1,0 +1,110 @@
+.navbar {
+  background-color: var(--color-dark-blue) !important; /* Dark Blue */
+  padding: 0.8rem 1.5rem; /* Reduced padding for a sleeker look */
+  z-index: 1050; /* Ensures navbar stays on top */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for more prominence */
+  position: sticky;
+  top: 0; /* Ensure it stays at the top */
+  width: 100%; 
+  transition: top 0.3s ease;
+}
+
+/* Anne Signature Brand Styling */
+.navbar-brand .brand-name {
+  font-family: 'Dancing Script', cursive; /* Elegant handwriting font */
+  font-style: italic; /* Signature-like style */
+  font-size: 2.4rem; /* Slightly larger for emphasis */
+  font-weight: 700; /* Bold for better visibility */
+  color: var(--color-coral) !important; /* Coral color */
+  letter-spacing: 1px; /* Adds slight spacing for readability */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth interaction feedback */
+  cursor: pointer; /* Indicates interactivity */
+}
+
+.navbar-brand .brand-name:hover {
+  color: var(--color-beige) !important; /* Changes to beige on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Navbar Links Styling */
+.navbar-nav .nav-link {
+  color: var(--color-coral) !important; /* Coral text color for links */
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-transform: capitalize;
+  position: relative; /* For the underline effect */
+  margin-right: 2rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-beige) !important; /* Beige on hover for contrast */
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: 600;
+  color: var(--color-beige) !important; /* Active link in beige */
+}
+
+.navbar-nav .nav-link.active::after, 
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1); /* Ensure the underline stays when active or hovered */
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-coral); /* Coral underline */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Scroll Margin for Sections */
+section {
+  scroll-margin-top: 70px;
+  margin-top: 70px;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: var(--color-dark-blue) !important; /* Dark blue for collapsed navbar */
+    padding: 1rem 0;
+  }
+
+  /* Push content below expanded navbar */
+  .navbar-collapse{
+    position: relative;
+    margin-bottom: 1rem; /* Adds space below expanded menu */
+  }
+
+  .navbar-toggler {
+    z-index: 1100; /* Keeps the toggle button accessible */
+  }
+
+  /* Prevent overlap with navbar */
+  body {
+    padding-top: 65px; /* Prevent overlap with fixed navbar */
+  }
+
+  section {
+    margin-top: 80px; /* Adjust spacing to prevent overlap */
+  }
+}
+
+/* General Body Padding */
+body {
+  padding-top: 0px; /* Keeps a consistent offset for fixed navbar */
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+}

@@ -1,0 +1,99 @@
+:root {
+  --color-skill-gradient-start: #6a11cb; /* Start of gradient */
+  --color-skill-gradient-end: #2575fc; /* End of gradient */
+  --color-muted-charcoal: #8E8D8A; /* Muted Charcoal for text */
+  --color-warm-coral: #FFB6A1; /* Soft Coral for subtle accents */
+  --color-dark-gray: #333333; /* Dark Gray for headers and text */
+  --color-dark-blue: #2b3a67;
+}
+
+/* General About Section */
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 15%;; /* Vertical padding only */
+  margin: 0; /* Remove any default margin */
+  background-color: var(--color-beige);  /* Light, neutral background */
+  color: var(--color-dark-blue); /* For text */
+  
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: var(--color-dark-blue);
+  margin-bottom: 1.5rem;
+  font-family: "Chewy", sans-serif;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  color: var(--color-dark-blue);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.about-subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-dark-blue);
+  font-weight: bold;
+  text-align: center;
+}
+
+.about-card {
+  min-height: 250px;  /* Minimum height to maintain consistent size */
+  box-sizing: border-box; /* Include padding and borders in the element's total size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center;     /* Horizontally center the content */
+  padding: 1.5rem;
+  margin: 0.5rem;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-icon {
+  font-size: 3rem;
+  color: var(--color-warm-coral);
+  margin-bottom: 0.5rem;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: var(--color-dark-blue);
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Remove spacing between sections */
+.App > * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .about-card {
+    padding: 0.8rem;
+  }
+}
