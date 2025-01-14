@@ -1,142 +1,89 @@
-:root {
-  --color-light-blue: #A9C9FF; /* Soft Blue */
-  --color-light-beige: #F4F1E1; /* Soft Beige */
-  --color-muted-charcoal: #8E8D8A; /* Muted Charcoal */
-  --color-warm-coral: #FFB6A1; /* Soft Coral */
-  --color-dark-gray: #333333; /* Dark Gray for headers */
-  --color-dark-blue: #2b3a67; 
+:root { 
+  --color-skill-bg: #f4f1e1; /* Soft beige background for the cards */
+  --color-skill-hover-bg: #ffb6a1; /* Soft coral for hover effect */
+  --color-dark-blue: #2b3a67; /* Text color */
+  --color-muted-charcoal: #8E8D8A; /* Muted Charcoal for text */
 }
 
-#skills {
-   /* Matching gradient with skills-section */
-  padding: 0; /* No extra padding */
-  margin: 0;
-  width: 100%; /* Full width */
-  background-color: var(--color-beige);  /* Light, neutral background */
-  color: var( --color-dark-blue); /* For text */
-  
-}
-
+/* Skills Section */
 .skills-section {
   text-align: center;
-  padding: 4rem; /* Space around the skills content */
-  background: transparent; /* No background color so it blends */
-  margin: 0 auto; /* Center the section */
-  width: 100%; /* Full width */
-  box-sizing: border-box;
-  border-radius: 0; /* No rounded corners */
-  box-shadow: none; /* No shadow effect */
-  
+  padding: 4rem 15%; /* Vertical padding */
+  background: transparent;
+  color: var(--color-dark-blue);
 }
-
-#skills h2 {
-  color: var(--color-dark-blue); /* Accent color for headings */
-}
-
 
 /* Skills Title */
 .skills-title {
   font-size: 2.5rem;
-  color: var(--color-dark-blue); /* Dark gray for consistency */
   margin-bottom: 1rem;
   font-family: "Chewy", sans-serif;
 }
 
-/* Intro Paragraph */
-.skills-intro {
-  font-size: 1.2rem;
-  color: var(--color-dark-blue); /* Muted text color */
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
 /* Skills Grid */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 cards per row */
-  gap: 1rem; /* Reduced gap between the cards */
-  justify-items: center; /* Center the skill cards */
-  max-width: 100%; /* Ensures full width */
-  margin: 0 auto; /* Center the grid */
-  padding: 0 25%; /* Increased padding on left and right to push icons closer to the middle */
-}
-
-@media (max-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 per row on smaller screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 per row on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
-  }
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap in rows */
+  justify-content: center; /* Center the entire grid */
+  gap: 1rem; /* Gap between each card */
+  padding: 0; /* No extra padding */
+  margin: 0 auto;
 }
 
 /* Skill Card (Individual Boxes) */
 .skill-card {
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
-  border-radius: 10px;
-  padding: 0.5rem; /* Reduced padding for smaller cards */
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: var(--color-skill-bg); /* Soft beige background */
+  color: var(--color-dark-blue); /* Dark blue for text */
+  border-radius: 0; /* Remove rounded corners (sharp corners) */
+  padding: 1.5rem;
+  margin: 0.5rem;
+  width: calc(25% - rem); /* 4 cards per row for large screens */
+  min-width: 220px; /* Ensures a minimum width */
+  height: 150px; /* Keeps the card square */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%; /* Fixed width to avoid the card expanding */
-  max-width: 120px; /* Max width for the cards */
+  box-sizing: border-box;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  text-align: center;
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-skill-hover-bg); /* Soft coral on hover */
 }
-
 
 /* Skill Icon */
 .skill-card i {
-  font-size: 1.5rem; /* Reduced icon size */
-  color: #007acc; /* Blue color to align with the theme */
-  margin-bottom: 0.5rem; /* Space between icon and text */
+  font-size: 2.5rem; /* Slightly larger icon */
+  margin-bottom: 0.5rem;
+  color: var(--color-dark-blue); /* Dark blue for icon color */
 }
 
-/* Skill Name Text */
 .skill-card p {
-  font-size: 0.9rem; /* Reduced text size */
-  color: #444;
+  font-size: 1rem;
   font-weight: bold;
   margin: 0;
+  color: var(--color-dark-blue); /* Text color */
 }
 
-/* Responsive Adjustments */
+/* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 per row on smaller screens */
-    gap: 1rem; /* Adjust gap for medium screens */
+  .skill-card {
+    width: calc(33.33% - 1rem); /* 3 cards per row for medium screens */
   }
 }
 
 @media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 per row on smaller screens */
-    gap: 1rem; /* Adjust gap for smaller screens */
+  .skill-card {
+    width: calc(50% - 1rem); /* 2 cards per row for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
-    gap: 0.8rem; /* Adjust gap for mobile */
+  .skill-card {
+    width: calc(50% - 1rem); /* 2 cards per row for very small screens */
   }
-
-
 }

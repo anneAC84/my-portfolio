@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll"; // React-scroll for smooth scrolling
+import { Link } from "react-scroll";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./NavBar.css";
@@ -8,7 +8,11 @@ const NavBar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  // IntersectionObserver for active section tracking
+  const toggleNavbar = () => {
+    setIsNavOpen(!isNavOpen);
+    document.body.classList.toggle("navbar-open", !isNavOpen);
+  };
+
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
@@ -23,18 +27,9 @@ const NavBar = () => {
     );
 
     sections.forEach((section) => observer.observe(section));
+
     return () => observer.disconnect();
   }, []);
-
-  const toggleNavbar = () => {
-    setIsNavOpen(!isNavOpen);
-    // Add the navbar-open class to the body to push content down
-    if (!isNavOpen) {
-      document.body.classList.add("navbar-open");
-    } else {
-      document.body.classList.remove("navbar-open");
-    }
-  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -56,61 +51,19 @@ const NavBar = () => {
         </button>
         <div className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link
-                to="home"
-                smooth={true}
-                duration={500}
-                className={`nav-link ${activeSection === "home" ? "active" : ""}`}
-                onClick={toggleNavbar}
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                className={`nav-link ${activeSection === "about" ? "active" : ""}`}
-                onClick={toggleNavbar}
-              >
-                About Me
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="skills"
-                smooth={true}
-                duration={500}
-                className={`nav-link ${activeSection === "skills" ? "active" : ""}`}
-                onClick={toggleNavbar}
-              >
-                Skills
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="projects"
-                smooth={true}
-                duration={500}
-                className={`nav-link ${activeSection === "projects" ? "active" : ""}`}
-                onClick={toggleNavbar}
-              >
-                Projects
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                className={`nav-link ${activeSection === "contact" ? "active" : ""}`}
-                onClick={toggleNavbar}
-              >
-                Contact Me
-              </Link>
-            </li>
+            {["home", "about", "skills", "projects", "contact"].map((section) => (
+              <li key={section} className="nav-item">
+                <Link
+                  to={section}
+                  smooth={true}
+                  duration={500}
+                  className={`nav-link ${activeSection === section ? "active" : ""}`}
+                  onClick={toggleNavbar}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

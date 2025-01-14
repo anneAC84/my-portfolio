@@ -1,3 +1,4 @@
+/* Navbar Styling */
 .navbar {
   background-color: var(--color-dark-blue) !important; /* Dark Blue */
   padding: 0.8rem 1.5rem; /* Reduced padding for a sleeker look */
@@ -35,6 +36,7 @@
   text-transform: capitalize;
   position: relative; /* For the underline effect */
   margin-right: 2rem;
+  cursor: pointer; /* Pointer cursor for links */
 }
 
 .navbar-nav .nav-link:hover {
@@ -70,6 +72,7 @@ section {
   margin-top: 70px;
 }
 
+/* Mobile View Adjustments */
 @media (max-width: 992px) {
   .navbar-collapse {
     background-color: var(--color-dark-blue) !important; /* Dark blue for collapsed navbar */
@@ -77,7 +80,7 @@ section {
   }
 
   /* Push content below expanded navbar */
-  .navbar-collapse{
+  .navbar-collapse {
     position: relative;
     margin-bottom: 1rem; /* Adds space below expanded menu */
   }
@@ -101,10 +104,12 @@ body {
   padding-top: 0px; /* Keeps a consistent offset for fixed navbar */
 }
 
+/* Navbar Brand Font Size */
 .navbar-brand {
   font-size: 1.8rem;
 }
 
+/* Navbar Link Font Size */
 .nav-link {
   font-size: 1.1rem;
 }

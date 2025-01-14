@@ -1,6 +1,7 @@
 import React from "react";
 import "../../App.css"; // Global styles
 import "./About.css"; // Custom About CSS
+import AboutCard from "./AboutCard"; // Import the reusable AboutCard component
 
 const About = () => {
   return (
@@ -19,31 +20,19 @@ const About = () => {
       {/* Subtitle */}
       <h3 className="about-subtitle text-center">What I Bring to the Table</h3>
 
-      {/* New Card Grid */}
+      {/* Card Grid (New) */}
       <div className="row justify-content-center">
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3 text-center">
-            <div className="about-icon">🌟</div>
-            <p>Team Player</p>
-          </div>
+          <AboutCard icon="🌟" text="Team Player" />
         </div>
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3 text-center">
-            <div className="about-icon">💻</div>
-            <p>Passionate Coder</p>
-          </div>
+          <AboutCard icon="💻" text="Passionate Coder" />
         </div>
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3 text-center">
-            <div className="about-icon">🌍</div>
-            <p>Global Thinker</p>
-          </div>
+          <AboutCard icon="🌍" text="Global Thinker" />
         </div>
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3 text-center">
-            <div className="about-icon">📚</div>
-            <p>Lifelong Learner</p>
-          </div>
+          <AboutCard icon="📚" text="Lifelong Learner" />
         </div>
       </div>
 
@@ -51,32 +40,16 @@ const About = () => {
       <h3 className="about-subtitle text-center">A Little More About Me</h3>
       <div className="row justify-content-center">
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3">
-            {/* Heart Icon (Replaced with emoji) */}
-            <div className="about-icon mb-2">❤️</div>
-            <p>Passionate about health & well-being</p>
-          </div>
+          <AboutCard icon="❤️" text="Passionate about health & well-being" />
         </div>
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3">
-            {/* Utensils Icon (Replaced with emoji) */}
-            <div className="about-icon mb-2">🍽️</div>
-            <p>Love cooking and experimenting with recipes</p>
-          </div>
+          <AboutCard icon="🍽️" text="Love cooking and experimenting with recipes" />
         </div>
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3">
-            {/* Plane Icon (Replaced with emoji) */}
-            <div className="about-icon mb-2">✈️</div>
-            <p>Always ready to explore new places</p>
-          </div>
+          <AboutCard icon="✈️" text="Always ready to explore new places" />
         </div>
         <div className="col-md-3 col-6 mb-4">
-          <div className="about-card p-3">
-            {/* Code Icon (Replaced with emoji) */}
-            <div className="about-icon mb-2">💻</div>
-            <p>Dedicated to creating user-centered apps</p>
-          </div>
+          <AboutCard icon="💻" text="Dedicated to creating user-centered apps" />
         </div>
       </div>
 

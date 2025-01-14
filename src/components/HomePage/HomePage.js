@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./HomePage.css";
-import profile from "../../assets/images/profile.jpg";
+import profile from "../../assets/images/profile.jpg"; // Ensure this is an optimized image
 import TypingEffect from "react-typing-effect";
 
 const HomePage = () => {

@@ -1,12 +1,15 @@
 
 :root {
   --color-light-blue: #A9C9FF;
-  --color-light-beige: #F4F1E1;
+  --color-beige: #F4F1E1;
   --color-muted-charcoal: #8E8D8A;
   --color-warm-coral: #FFB6A1;
   --color-dark-gray: #333333;
   --color-dark-blue: #2b3a67; /* Dark Blue */
+
 }
+
+
 
 body {
   font-family: 'Chewy', sans-serif; /* Change 'Fredoka One' to the font you chose */

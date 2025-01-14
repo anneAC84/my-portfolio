@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Skills.css";
 
+// Consider moving this to a separate file if reused elsewhere
 const skillsData = [
   { name: "React", iconClass: "devicon-react-original colored" },
   { name: "Node.js", iconClass: "devicon-nodejs-plain colored" },
@@ -28,15 +29,15 @@ const Skills = () => {
         From front-end frameworks to back-end technologies, these are the tools I use to bring ideas to life.
       </p>
       <div className="skills-grid">
-        {skillsData.map((skill, index) => (
+        {skillsData.map(({ name, iconClass }) => (
           <div
-            className={`skill-card ${hoveredSkill === skill.name ? "hovered" : ""}`}
-            key={index}
-            onMouseEnter={() => setHoveredSkill(skill.name)}
+            className={`skill-card ${hoveredSkill === name ? "hovered" : ""}`}
+            key={name}
+            onMouseEnter={() => setHoveredSkill(name)}
             onMouseLeave={() => setHoveredSkill(null)}
           >
-            <i className={skill.iconClass} title={skill.name}></i>
-            <p>{skill.name}</p>
+            <i className={iconClass} title={name}></i>
+            <p>{name}</p>
           </div>
         ))}
       </div>
